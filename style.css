@@ -1,40 +1,12 @@
 *{
     margin: 0;
     padding: 0;
-    background: #c1c1c1; 
+    background: #150E0BFF;
 }
 
-.main{
-    width: 100vw;
-    height: 100vh;
+#game{
     display: flex;
+    margin-top: 55px;
     justify-content: center;
     align-items: center;
-    
-}
-#game{
-    position: relative;
-}
-
-.buttonSpin{
-    width: 194px;
-    height: 62px;
-    position:absolute;
-    bottom: 20px;
-    left:255px;
-    border-style: none;
-    cursor: pointer;
-    background:url("/assets/Spin.png");
-    background-size: contain;
-
-}
-
-@media screen and (max-width:800px){
-    .main{
-        display: block;
-        margin-top: 100px;
-        
-
-        
-    }
 }

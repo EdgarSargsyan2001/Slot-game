@@ -53,9 +53,31 @@ function SetTime(timeStop,addtime,columnArr,column){
     return columnArr[vin].fruitName
 }
 
+function bottonClick(){
+    let timeStop = parseInt((Math.random()*1000)+400) 
+
+        gameScene.Win.y = data.winImgHeight
+        gameScene.button.y = gameScene.sys.canvas.height+500
+        data.speedcolumn1 = data.speedcolumn2 = data.speedcolumn3 = 18
+        
+        
+        let winColumn1 = SetTime(timeStop,1500,data.column1,"column1")
+        let winColumn2 = SetTime(timeStop,2800,data.column2,"column2")
+        let winColumn3 = SetTime(timeStop,4500,data.column3,"column3")
+        setTimeout(()=>{
+            if(winColumn1 == winColumn2 && winColumn1  == winColumn3 && winColumn3 == winColumn2){
+                gameScene.Win.y = 50
+
+            }
+            gameScene.button.y = gameScene.sys.canvas.height+data.buttonHeight
+            
+        },4600 + timeStop)
+
+}
+
 export{
-    data,
     setDrow,
     setUpdate,
+    bottonClick,
     SetTime
 }

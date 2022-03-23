@@ -1,9 +1,6 @@
 import {gameScene,config } from "./gameScene.js"
-import {setDrow,setUpdate,SetTime} from './Function.js'
-
-const SpinButton = document.querySelector('.buttonSpin')
+import {setDrow,setUpdate,bottonClick} from './Function.js'
  
-
 export const data = {
 
     speedcolumn1:0,
@@ -11,6 +8,7 @@ export const data = {
     speedcolumn3:0,
     ElementWidth:100,
     winImgHeight:-50,
+    buttonHeight:-50,
 
     column1:[   
                 {fruitName:"Blackberry", x:config.width/3.3, y:160,name:undefined},
@@ -44,21 +42,36 @@ export const data = {
 
 gameScene.create = function(){
 
+    //columns
     setDrow(data.column2)
     setDrow(data.column3)
     setDrow(data.column1)
-    
-    this.bg = this.add.sprite(0,0,'Background')
-    this.bg.setPosition(this.sys.canvas.width/2,this.sys.canvas.height/2)
-    this.bg.displayWidth = this.sys.canvas.width;
-    this.bg.displayHeight = this.sys.canvas.height;
 
 
+    //background image
+    gameScene.bg = this.add.sprite(0,0,'Background')
+    gameScene.bg.setPosition(this.sys.canvas.width/2,this.sys.canvas.height/2)
+    gameScene.bg.displayWidth = this.sys.canvas.width;
+    gameScene.bg.displayHeight = this.sys.canvas.height;
+
+
+    //win game
     gameScene.Win = gameScene.add.image(350,data.winImgHeight,'Win')
     gameScene.Win.displayWidth = 400;
     gameScene.Win.displayHeight = 50;
-    
+
+
+    //button spin onClick
+    this.button = this.add.image(this.sys.canvas.width/2,this.sys.canvas.height+data.buttonHeight,'button')
+        .setInteractive()
+        .on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN,bottonClick)
+
+
+    gameScene.button.displayWidth = 194;
+    gameScene.button.displayHeight = 62;
+
 }
+    
 
 gameScene.update = function(){
 
@@ -69,32 +82,5 @@ gameScene.update = function(){
 }
 
 
-
-SpinButton.addEventListener('click',function(e){
-    
-    let timeStop = parseInt((Math.random()*1000)+400) 
-
-    e.target.disabled = true
-    gameScene.Win.y = data.winImgHeight
-    
-
-    data.speedcolumn1 = data.speedcolumn2 = data.speedcolumn3 = 18
-    
-    
-    let winColumn1 = SetTime(timeStop,1500,data.column1,"column1")
-    let winColumn2 = SetTime(timeStop,2800,data.column2,"column2")
-    let winColumn3 = SetTime(timeStop,4500,data.column3,"column3")
-
-    setTimeout(()=>{
-        if(winColumn1 == winColumn2 && winColumn1  == winColumn3 && winColumn3 == winColumn2){
-            gameScene.Win.y = 50
-
-        }
-        
-        e.target.disabled = false 
-
-    },4600 + timeStop)
-
-})
 
 
