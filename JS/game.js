@@ -12,9 +12,9 @@ export const data = {
 
     column1:[   
                 {fruitName:"Blackberry", x:config.width/3.3, y:160,name:undefined},
+                {fruitName:"Cherry", x:config.width/3.3, y:-80,name:undefined},
                 {fruitName:"Banana", x:config.width/3.3, y:40,name:undefined},
-                {fruitName:"Blackberry", x:config.width/3.3, y:-80,name:undefined},
-                {fruitName:"Cherry", x:config.width/3.3, y:-200,name:undefined},
+                {fruitName:"Blackberry", x:config.width/3.3, y:-200,name:undefined},
                 {fruitName:"Cherry", x:config.width/3.3, y:-320,name:undefined},
                 {fruitName:"Banana", x:config.width/3.3, y:-440,name:undefined},
             ],
@@ -22,17 +22,17 @@ export const data = {
                 {fruitName:"Banana", x:config.width/2, y:160,name:undefined},
                 {fruitName:"Banana", x:config.width/2, y:40,name:undefined},
                 {fruitName:"Blackberry", x:config.width/2, y:-80,name:undefined},
-                {fruitName:"Cherry", x:config.width/2, y:-200,name:undefined},
-                {fruitName:"Blackberry", x:config.width/2, y:-320,name:undefined},
+                {fruitName:"Blackberry", x:config.width/2, y:-200,name:undefined},
+                {fruitName:"Cherry", x:config.width/2, y:-320,name:undefined},
                 {fruitName:"Cherry", x:config.width/2, y:-440,name:undefined},
             ],
     column3:[
                 {fruitName:"Cherry", x:config.width/1.42, y:160,name:undefined},
-                {fruitName:"Banana", x:config.width/1.42, y:40,name:undefined},
-                {fruitName:"Blackberry", x:config.width/1.42, y:-80,name:undefined},
+                {fruitName:"Blackberry", x:config.width/1.42, y:40,name:undefined},
+                {fruitName:"Banana", x:config.width/1.42, y:-80,name:undefined},
                 {fruitName:"Cherry", x:config.width/1.42, y:-200,name:undefined},
-                {fruitName:"Blackberry", x:config.width/1.42, y:-320,name:undefined},
                 {fruitName:"Banana", x:config.width/1.42, y:-440,name:undefined},
+                {fruitName:"Blackberry", x:config.width/1.42, y:-320,name:undefined},
             ]        
 
 
