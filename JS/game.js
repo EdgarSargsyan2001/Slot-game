@@ -41,12 +41,13 @@ export const data = {
 
 
 gameScene.create = function(){
+    //background white
+    gameScene.backgroundcolor = gameScene.add.image(0,0,"backgroundcolor")
 
     //columns
     setDrow(data.column2)
     setDrow(data.column3)
     setDrow(data.column1)
-
 
     //background image
     gameScene.bg = this.add.sprite(0,0,'Background')

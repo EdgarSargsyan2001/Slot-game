@@ -66,6 +66,7 @@ function bottonClick(){
         let winColumn1 = SetTime(timeStop,1000,data.column1,"column1")
         let winColumn2 = SetTime(timeStop,1800,data.column2,"column2")
         let winColumn3 = SetTime(timeStop,3500,data.column3,"column3")
+        
         setTimeout(()=>{
             if(winColumn1 == winColumn2 && winColumn1  == winColumn3 && winColumn3 == winColumn2){
                 gameScene.Win.y = 50

@@ -20,6 +20,6 @@ gameScene.preload = function(){
     this.load.image('Cherry','assets/Cherry.png')
     this.load.image('Win','assets/Win.png')
     this.load.image('button', 'assets/Spin.png');
-
+    this.load.image('backgroundcolor', 'assets/backgroundcolor.png');
 }
 
