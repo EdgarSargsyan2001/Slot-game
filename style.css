@@ -5,8 +5,10 @@
 }
 
 #game{
+    position: relative;
     display: flex;
     margin-top: 55px;
     justify-content: center;
     align-items: center;
 }
+
