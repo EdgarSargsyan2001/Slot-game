@@ -2,11 +2,11 @@ import {gameScene,config } from "./gameScene.js"
 import {setDrow,setUpdate,bottonClick,cheatToolClick,changeNum} from './Function.js'
  
 export const data = {
-
+    flagSpinButton:true,
     speedcolumn1:0,
     speedcolumn2:0,
     speedcolumn3:0,
-    ElementWidth:100,
+    ElementWidth:100 * config.height/350 * config.width/700,
     winImgHeight:-50,
     buttonHeight:-50,
     flagTools:false,
@@ -17,28 +17,28 @@ export const data = {
 
 
     column1:[   
-                {fruitName:"Blackberry", x:config.width/3.3, y:160,name:undefined},
-                {fruitName:"Cherry", x:config.width/3.3, y:-80,name:undefined},
-                {fruitName:"Banana", x:config.width/3.3, y:40,name:undefined},
-                {fruitName:"Blackberry", x:config.width/3.3, y:-200,name:undefined},
-                {fruitName:"Cherry", x:config.width/3.3, y:-320,name:undefined},
-                {fruitName:"Banana", x:config.width/3.3, y:-440,name:undefined},
+                {fruitName:"Blackberry", x:config.width/3.3, y:160*config.height/350,info:undefined},
+                {fruitName:"Cherry", x:config.width/3.3, y:-80*config.height/350,info:undefined},
+                {fruitName:"Banana", x:config.width/3.3, y:40*config.height/350,info:undefined},
+                {fruitName:"Blackberry", x:config.width/3.3, y:-200*config.height/350,info:undefined},
+                {fruitName:"Cherry", x:config.width/3.3, y:-320*config.height/350,info:undefined},
+                {fruitName:"Banana", x:config.width/3.3, y:-440*config.height/350,info:undefined},
             ],
     column2:[
-                {fruitName:"Banana", x:config.width/2, y:160,name:undefined},
-                {fruitName:"Banana", x:config.width/2, y:40,name:undefined},
-                {fruitName:"Blackberry", x:config.width/2, y:-80,name:undefined},
-                {fruitName:"Blackberry", x:config.width/2, y:-200,name:undefined},
-                {fruitName:"Cherry", x:config.width/2, y:-320,name:undefined},
-                {fruitName:"Cherry", x:config.width/2, y:-440,name:undefined},
+                {fruitName:"Banana", x:config.width/2, y:160*config.height/350,info:undefined},
+                {fruitName:"Banana", x:config.width/2, y:40*config.height/350,info:undefined},
+                {fruitName:"Blackberry", x:config.width/2, y:-80*config.height/350,info:undefined},
+                {fruitName:"Blackberry", x:config.width/2, y:-200*config.height/350,info:undefined},
+                {fruitName:"Cherry", x:config.width/2, y:-320*config.height/350,info:undefined},
+                {fruitName:"Cherry", x:config.width/2, y:-440*config.height/350,info:undefined},
             ],
     column3:[
-                {fruitName:"Cherry", x:config.width/1.42, y:160,name:undefined},
-                {fruitName:"Blackberry", x:config.width/1.42, y:40,name:undefined},
-                {fruitName:"Banana", x:config.width/1.42, y:-80,name:undefined},
-                {fruitName:"Cherry", x:config.width/1.42, y:-200,name:undefined},
-                {fruitName:"Banana", x:config.width/1.42, y:-440,name:undefined},
-                {fruitName:"Blackberry", x:config.width/1.42, y:-320,name:undefined},
+                {fruitName:"Cherry", x:config.width/1.42, y:160*config.height/350,info:undefined},
+                {fruitName:"Blackberry", x:config.width/1.42, y:40*config.height/350,info:undefined},
+                {fruitName:"Banana", x:config.width/1.42, y:-80*config.height/350,info:undefined},
+                {fruitName:"Cherry", x:config.width/1.42, y:-200*config.height/350,info:undefined},
+                {fruitName:"Banana", x:config.width/1.42, y:-440*config.height/350,info:undefined},
+                {fruitName:"Blackberry", x:config.width/1.42, y:-320*config.height/350,name:undefined},
             ]        
 
 
@@ -48,7 +48,7 @@ export const data = {
 
 gameScene.create = function(){
     //background white
-    gameScene.backgroundcolor = gameScene.add.image(0,0,"backgroundcolor")
+    gameScene.backgroundcolor = gameScene.add.image(this.sys.canvas.height,50,"backgroundcolor")
 
     //columns
     setDrow(data.column2)
@@ -63,7 +63,8 @@ gameScene.create = function(){
 
 
     //win game
-    gameScene.Win = gameScene.add.image(350,data.winImgHeight,'Win')
+    gameScene.Win = gameScene.add.image(this.sys.canvas.width/2,50,'Win')
+    gameScene.Win.alpha = 0
     gameScene.Win.displayWidth = 400;
     gameScene.Win.displayHeight = 50;
 
@@ -118,7 +119,7 @@ gameScene.create = function(){
     gameScene.button.displayWidth = 194;
     gameScene.button.displayHeight = 62;
 
-
+ 
 }
     
 
