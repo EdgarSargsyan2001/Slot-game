@@ -26,34 +26,37 @@ function setUpdate(columnArr,speed){
 function toolsClose(CheatToolBackgroundY,ArrowY,textToolsY){
 
     gameScene.CheatToolBackground.y = CheatToolBackgroundY
-    gameScene.Arrow.y = ArrowY
-    gameScene.Arrow.flipY = false
     gameScene.textTools.y = textToolsY
-    gameScene.textToolsTitle.y = 
-    gameScene.CheatToolInput1.y = 
-    gameScene.CheatToolInput2.y =
-    gameScene.CheatToolInput3.y =
-    gameScene.num1.y = 
-    gameScene.num2.y = 
-    gameScene.num3.y = CheatToolBackgroundY
-
+    gameScene.Arrow.y = ArrowY
+    gameScene.Arrow.flipY = 
     data.flagTools = false 
+
+    gameScene.textToolsTitle.alpha = 
+    gameScene.CheatToolInput1.alpha = 
+    gameScene.CheatToolInput2.alpha =
+    gameScene.CheatToolInput3.alpha =
+    gameScene.num1.alpha = 
+    gameScene.num2.alpha = 
+    gameScene.num3.alpha = 0
+
+    
 }
-function toolsOpen(CheatToolBackgroundY,ArrowY,textToolsY,textToolsTitle,CheatToolInputsY,numsY){
+function toolsOpen(CheatToolBackgroundY,ArrowY,textToolsY){
     
     gameScene.CheatToolBackground.y = CheatToolBackgroundY
-    gameScene.Arrow.y = ArrowY
-    gameScene.Arrow.flipY = true
     gameScene.textTools.y = textToolsY
-    gameScene.textToolsTitle.y = textToolsTitle
-    gameScene.CheatToolInput1.y = 
-    gameScene.CheatToolInput2.y =
-    gameScene.CheatToolInput3.y = CheatToolInputsY
-    gameScene.num1.y = 
-    gameScene.num2.y = 
-    gameScene.num3.y = numsY
-
+    gameScene.Arrow.y = ArrowY
+    gameScene.Arrow.flipY = 
     data.flagTools = true 
+
+    gameScene.textToolsTitle.alpha = 
+    gameScene.CheatToolInput1.alpha = 
+    gameScene.CheatToolInput2.alpha =
+    gameScene.CheatToolInput3.alpha = 
+    gameScene.num1.alpha = 
+    gameScene.num2.alpha = 
+    gameScene.num3.alpha = 1
+
 }
 
 function SetTime(timeStop,addtime,columnArr,column,toolsNum){
@@ -95,7 +98,7 @@ function SetTime(timeStop,addtime,columnArr,column,toolsNum){
             }
         })
 
-    },timeStop + addtime )
+    }, timeStop + addtime  )
 
     return WinFruitName
 
@@ -120,13 +123,12 @@ function bottonClick(){
         setTimeout(()=>{
             if(winColumn1 == winColumn2 && winColumn1  == winColumn3 && winColumn3 == winColumn2){
                 gameScene.Win.alpha = 1
-
             }
             data.flagSpinButton = true
             gameScene.button.alpha = 1
             
 
-        },3500 + timeStop)
+        }, 3500 + timeStop)
 
 
     //tools close
@@ -148,10 +150,10 @@ function bottonClick(){
 function cheatToolClick(){
             
     if(data.flagTools){
-        toolsClose(-25,7,0,)
+        toolsClose(-25,7,0)
         
     }else{
-        toolsOpen(40,70,63,10,38,27)
+        toolsOpen(40,70,63)
 
     }
     

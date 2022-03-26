@@ -10,7 +10,6 @@ export const data = {
     winImgHeight:-50,
     buttonHeight:-50,
     flagTools:false,
-    text:'1',
     num1:'-',
     num2:'-',
     num3:'-',
@@ -83,34 +82,33 @@ gameScene.create = function(){
     gameScene.Arrow.displayHeight = 5;
 
     //Cheat Tool Input
-    gameScene.CheatToolInput1 = gameScene.add.image(40,-30,'CheatToolInput')
-    gameScene.CheatToolInput2 = gameScene.add.image(90,-30,'CheatToolInput')
-    gameScene.CheatToolInput3 = gameScene.add.image(140,-30,'CheatToolInput')
+    gameScene.CheatToolInput1 = gameScene.add.image(40,38,'CheatToolInput')
+    gameScene.CheatToolInput2 = gameScene.add.image(90,38,'CheatToolInput')
+    gameScene.CheatToolInput3 = gameScene.add.image(140,38,'CheatToolInput')
     
     gameScene.CheatToolInput1.displayWidth = gameScene.CheatToolInput2.displayWidth  = gameScene.CheatToolInput3.displayWidth = 40;
     gameScene.CheatToolInput1.displayHeight = gameScene.CheatToolInput2.displayHeight = gameScene.CheatToolInput3.displayHeight  = 25;
 
-
-
-    // text tools title
-    gameScene.textToolsTitle = this.add.text(15, -25, 'SYMBOL POSITION IN THE REEL', { fontFamily: 'monospace', fontSize:10 });
-
-
     //text Tools
     gameScene.textTools = this.add.text(30, 0, 'Tools', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif,', fontSize:18 });
+    
+
+    // text tools title
+    gameScene.textToolsTitle = this.add.text(15, 10, 'SYMBOL POSITION IN THE REEL', { fontFamily: 'monospace', fontSize:10 });
+    gameScene.textToolsTitle.alpha = 0
 
 
     // numbers
-    gameScene.num1 = this.add.text(35, -30, '-', { fontFamily: 'Georgia', fontSize:18 });
-    gameScene.num2 = this.add.text(85, -30, '-', { fontFamily: 'Georgia', fontSize:18 });
-    gameScene.num3 = this.add.text(135, -30, '-', { fontFamily: 'Georgia', fontSize:18 });
-
+    gameScene.num1 = this.add.text(35, 27, '-', { fontFamily: 'Georgia', fontSize:18 });
+    gameScene.num2 = this.add.text(85, 27, '-', { fontFamily: 'Georgia', fontSize:18 });
+    gameScene.num3 = this.add.text(135, 27, '-', { fontFamily: 'Georgia', fontSize:18 });
+    gameScene.num1.alpha = gameScene.num2.alpha = gameScene.num3.alpha = 0
 
     //changeNum
     gameScene.CheatToolInput1.setInteractive().on('pointerdown',()=>changeNum(gameScene.num1,"num1"))
     gameScene.CheatToolInput2.setInteractive().on('pointerdown',()=>changeNum(gameScene.num2,"num2"))
     gameScene.CheatToolInput3.setInteractive().on('pointerdown',()=>changeNum(gameScene.num3,"num3"))
-
+    gameScene.CheatToolInput1.alpha = gameScene.CheatToolInput2.alpha = gameScene.CheatToolInput3.alpha = 0
 
     //button spin onClick
     gameScene.button = this.add.image(this.sys.canvas.width/2,this.sys.canvas.height+data.buttonHeight,'button')
